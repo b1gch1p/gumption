@@ -7,27 +7,27 @@ function InitList() {
     /*
      * Insert an item into the list. db is an array with both "name" and "init" elemenats
      */
-    this.insert(db) {
-        this.elements.push(db);
-        this.elements.sort(function(a, b) {
+    this.insert = function(db) {
+        elements.push(db);
+        elements.sort(function(a, b) {
             return parseInt(b["init"]) - parseInt(a["init"]);
         });
-        update();
+        this.update();
     }
 
-    var update = function() {
+    this.update = function() {
         this.ul.innerHTML = "";
         for (var i = 0, len = elements.length; i < len; i++) {
-            add(elements[i]);
+            this.add(elements[i]);
         }
     }
 
-    var add = function(db) {
+    this.add = function(db) {
         // Create the elements that go in the list item
         var li      = document.createElement('li');
         var nm      = document.createTextNode(db["name"]);
         var inbx    = document.createElement('SPAN');
-        var in      = document.createTextNode(db["init"]);
+        var ini      = document.createTextNode(db["init"]);
         var clsbx   = document.createElement('SPAN');
         var cl      = document.createTextNode('\u00D7');
 
@@ -38,6 +38,8 @@ function InitList() {
             li.style.display = "none";
         }
 
+        inbx.appendChild(ini);
+        clsbx.appendChild(cl);
         li.appendChild(nm);
         li.appendChild(inbx);
         li.appendChild(clsbx);
