@@ -1,8 +1,11 @@
 function InitList() {
     
     this.ul         = document.createElement('ul');
+    this.initDiv    = document.createElement('DIV');
+    this.initDiv.appendChild(this.ul);
+
     var elements    = [];
-    
+     
 
     /*
      * Insert an item into the list. db is an array with both "name" and "init" elemenats
