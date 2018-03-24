@@ -9,16 +9,13 @@ function Tracker() {
         document.body.appendChild(this.lst.initDiv);
     }
     
-    document.onkeyup = function(e) {
-        if(e.key == "Enter") {
-            addCharacter();
-        }
-    }
+}
 
-    function addCharacter() {
-        db = [];
-        db['name'] = this.inp.getName();
-        db['init'] = this.inp.getInit();
-        this.lst.insert(db);
+document.onkeyup = function(e) {
+    if(e.key == "Enter") {
+        var db = [];
+        db["name"] = trk.inp.getName();
+        db["init"] = trk.inp.getInit();
+        trk.lst.insert(db);
     }
 }
