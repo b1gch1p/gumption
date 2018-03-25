@@ -5,7 +5,7 @@ function Tracker() {
     this.inp = new InputBar();
 
     this.initUI = function() {
-        document.body.appendChild(this.inp.inBar);
+        document.body.appendChild(this.inp.input_bar);
         document.body.appendChild(this.lst.initDiv);
     }
     
