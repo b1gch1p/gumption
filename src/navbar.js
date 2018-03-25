@@ -1,4 +1,4 @@
-function InputBar(l) {
+function NavBar(l) {
 
     this.listener = l;
 
@@ -17,15 +17,28 @@ function InputBar(l) {
     this.next_button.innerHTML = "NEXT";
     this.prev_button.innerHTML = "PREV";
 
-    this.input_bar   = document.createElement('DIV');
     this.button_div  = document.createElement('DIV');
 
-    this.button_div.className = "nav_div";
+    this.button_div.className = "nav";
     
     this.button_div.appendChild(this.next_button);
     this.button_div.appendChild(this.prev_button);
     this.button_div.appendChild(this.add_button);
     this.button_div.appendChild(this.clear_button);
-    this.input_bar.appendChild(this.button_div);
 
+    this.setAddButtonAction = function(action) {
+        this.add_button.onclick = action;
+    }
+
+    this.setClearButtonAction = function(action) {
+        this.clear_button.onclick = action;
+    }
+
+    this.setnextButtonAction = function(action) {
+        this.next_button.onclick = action;
+    }
+
+    this.setPrevButtonAction = function(action) {
+        this.prev_button.onclick = action;
+    }
 }

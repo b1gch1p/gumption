@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    background: #222222;
+}
+
 /* Include the padding and border in an element's total width and height */
 *{
     box-sizing: border-box;
@@ -15,7 +20,7 @@ ul li {
     position: relative;
     padding: 12px 8px 12px 40px;
     list-style-type: none;
-    background: #eee;
+    background: #222222;
     font-size: 18px;
     transition: 0.2s;
     font-family: Arial, Helvetica, sans-serif;
@@ -27,14 +32,9 @@ ul li {
     user-select: none;
 }
 
-/* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-    background: #f9f9f9;
-}
-
 /* Darker background-color on hover */
 ul li:hover {
-    background: #ddd;
+    background: #666666;
 }
 
 /* Style the close button */
@@ -48,14 +48,14 @@ ul li:hover {
 
 .close:hover { 
     background-color: #f44336;
-    color: white;
+    color: #666666;
 }   
 
-.init {i
+.init {
     display: inline-block;
     width: 50px;
     float: left;
-    color: #AAAAAA;
+    color: #eeeeee;
     font: Arial;
 }
 
