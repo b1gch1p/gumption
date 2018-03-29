@@ -3,16 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <title>IniTracker</title>
+        <link rel="stylesheet" type="text/css" href="sty/modal.css">
         <link rel="stylesheet" type="text/css" href="sty/nav.css">
         <link rel="stylesheet" type="text/css" href="sty/list.css">
-        <script src="src/track.js" ></script>      
+        <script src="src/track.js" ></script>  
+        <script src="src/initmodal.js"></script>    
         <script src="src/navbar.js" ></script>      
         <script src="src/list.js"></script>
+        
     </head>
     <body>
 	    <script>
-            var trk = new  Tracker();
-            trk.initUI();
+            const {webFrame} = require('electron')
+            const {dialog,app} = require('electron').remote;
+            const fs = require('fs');
+            const app_path = app.getAppPath();
+
+            var tkr = new  Tracker();
+            tkr.initUI();
+
         </script>
 	</body>
 </html>

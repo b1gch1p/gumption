@@ -26,19 +26,7 @@ function NavBar(l) {
     this.button_div.appendChild(this.add_button);
     this.button_div.appendChild(this.clear_button);
 
-    this.setAddButtonAction = function(action) {
-        this.add_button.onclick = action;
-    }
-
-    this.setClearButtonAction = function(action) {
-        this.clear_button.onclick = action;
-    }
-
-    this.setnextButtonAction = function(action) {
-        this.next_button.onclick = action;
-    }
-
-    this.setPrevButtonAction = function(action) {
-        this.prev_button.onclick = action;
+    this.add_button.onclick = function() {
+        tkr.askForInit();
     }
 }
