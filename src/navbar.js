@@ -25,8 +25,4 @@ function NavBar(l) {
     this.button_div.appendChild(this.prev_button);
     this.button_div.appendChild(this.add_button);
     this.button_div.appendChild(this.clear_button);
-
-    this.add_button.onclick = function() {
-        tkr.askForInit();
-    }
 }

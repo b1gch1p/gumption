@@ -34,11 +34,18 @@ function InitiativeModal() {
     document.body.appendChild(this.modal_div);
 
     this.displayModal = function() {
-        console.log("this");
+        this.init_input.value = "";
+        this.name_input.value = "";
         this.modal_div.style.display = "block";
     }
 
-    this.hideModal = function(){
+    this.hideModal = function() {
         this.modal_div.style.display = "none";
+    }
+
+    this.getInitiative = function() {
+        i = this.init_input.value;
+        n = this.name_input.value;
+        return {name: n, init: i};
     }
 }
