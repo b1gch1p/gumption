@@ -37,9 +37,6 @@ ul li {
     user-select: none;
 }
 
-ui li.active {
-    color: #f44336 !important;
-}
 
 /* Darker background-color on hover */
 ul li:hover {

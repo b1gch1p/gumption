@@ -20,3 +20,13 @@ button.nav_button:hover {
     display: table;
     border-bottom: 5px solid #666666;
 }
+
+.rounds {
+    width: 100%;
+    padding: 10px;
+    color: #eeeeee;
+    background-color: #222222;
+    font-size: 18px;
+    border-bottom: 5px solid #666666;
+}
+

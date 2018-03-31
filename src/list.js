@@ -6,6 +6,7 @@ function InitList() {
 
     var elements    = [];
     var current_initiative = 0;
+    this.rounds = 0;
 
     this.insert = function(db) {
         elements.push(db);
@@ -51,28 +52,42 @@ function InitList() {
     this.clear = function() {
         this.ul.innerHTML = "";
         elements = [];
-        this.current_initiative = 0;
+        current_initiative = 0;
+        this.rounds = 0;
     }
 
     this.nextInitiative = function() {
         current_initiative++;
-        if (current_initiative > elements.length) current_initiative = 0;
+        if (current_initiative > elements.length - 1) {
+            current_initiative = 0;
+            this.rounds++;
+        }
+        this.slectInitiative();
     }
 
     this.prevInitiative = function() {
         current_initiative--;
-        if (current_initiative < 0) current_initiative = elements.length;
+        if (current_initiative < 0) {
+            current_initiative = elements.length -1;
+            if (this.rounds > 0) this.rounds--;
+        } 
+        this.slectInitiative();
     }
 
     this.slectInitiative = function() {
-        var l = this.ul.getElementsByTagName('li');
         
-        var index = 0;
-        l.array.forEach(element => {
-            if (index == current_initiative) {
-                element.style.className = "active";
+        var l = this.ul.childNodes;
+        
+        if (l.length == 0) return;
+
+        var i;
+        for (i = 0; i < l.length; i++) {
+            if (i == current_initiative) {
+                l[i].style.color = "#f44336";
+            } else {
+                l[i].style.color = "#eeeeee";
             }
-        });
+        };
     }
 
 }
